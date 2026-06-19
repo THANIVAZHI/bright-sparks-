@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Reporter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Report a Civic Issue</h1>
+        <form id="issueForm">
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="pothole">Pothole</option>
+                <option value="garbage">Garbage</option>
+                <option value="streetlight">Streetlight</option>
+            </select>
+            <textarea id="description" placeholder="Describe the issue..." required></textarea>
+            <input type="file" id="photo" accept="image/*" capture="environment" required>
+            <button type="submit" id="submitBtn">Submit Report</button>
+        </form>
+        <p id="status"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

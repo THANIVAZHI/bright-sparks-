@@ -1,0 +1,21 @@
+let lat, lon;
+
+// Get Location
+navigator.geolocation.getCurrentPosition(pos => {
+    lat = pos.coords.latitude;
+    lon = pos.coords.longitude;
+    document.getElementById('status').innerText = "Location detected!";
+});
+
+// Handle Submit
+document.getElementById('issueForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = {
+        category: document.getElementById('category').value,
+        description: document.getElementById('description').value,
+        lat: lat,
+        lon: lon
+    };
+    alert("Report Data Captured: " + JSON.stringify(data));
+    // To save this, you will eventually link your Firebase configuration here.
+});
